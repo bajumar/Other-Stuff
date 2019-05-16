@@ -35,7 +35,7 @@
 | Minimum Days | 0 | 30 | 180 |
 | Lead Time | 0 | 0 | 15 hours |
 
-*\*Note: Understand lifcycle - <https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts#policy>*
+*\*Note: Understand lifecycle - <https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts#policy>*
 
 | Access Security Level | Account | Container | BLOB |
 | --- | --- | --- | --- |
