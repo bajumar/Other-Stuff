@@ -124,7 +124,7 @@
 | Reliability Control | Retry up to 24 hours | Granular via SDK |
 | Pricing Model | Per-Event | Capacity & Event |
 
-*\*Note: IoT Hub can also send outbound events to devices
+*\*Note: IoT Hub can also send outbound events to devices*
 
 | Messaging Choice | Storage Queue | Service Bus* |
 | --- | --- | --- |
@@ -135,7 +135,7 @@
 | Group into Transactions | No | Yes |
 | Batching Support | No | Yes |
 
-*\*Note: Service Bus Topics can support multiple Subscribers
+*\*Note: Service Bus Topics can support multiple Subscribers*
 
 ## Code-First (Imperative) Integration
 
