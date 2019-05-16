@@ -10,6 +10,16 @@
 
 ## Virtual Machines
 
+| Type | Sizes | Description |
+| --- | --- | --- |
+| General | A, B, Dv2, Dv3, DC | Balanced CPU:RAM |
+| Compute | F | High CPU:RAM (Web, Batch, Apps) |
+| Memory | Dv2, E, M, G, GS | High RAM:CPU (DB, Cache, Analytics) |
+| Storage | Ls | High IOPS (NoSQL, Transactional, Big Data) |
+| GPU | NC, ND, NV | NVIDA (Graphics, Rendering. CAD/CAM, Video) |
+| HPC | H | Most powerful CPU, RDMA-enabled |
+
+
 | SLA % | Qualifier |
 | --- | --- |
 | 99.99 | 2+ in 2+ Availability ZONES |
@@ -140,7 +150,7 @@
 ## Code-First (Imperative) Integration
 
 | Choices | WebJobs | Functions |
-| --- | --- | --- | 
+| --- | --- | --- |
 | Trigger Types| Triggered | Multiple |
 | Long-Running Type| Continuous (Looping) | No - 5-min timeout |
 | Remote Debugging | Only for Continuous | Yes |
@@ -156,3 +166,16 @@
 | Users | Devs | Business |
 | Granularity | Code | Configuration |
 
+## Service Fabric
+
+| Durability Tier | Gold | Silver | Bronze |
+| --- | --- | --- | --- |
+| Min Number of VMs | 5 | 5| 1 |
+| VM SKUs | Full-Nodes (Largest) | 1+ Cores | All |
+| Your Updates | Can be delayed | Can be delayed | Will not be delayed |
+| Azure Updates | Can be paused 2 hours | Cannot be delayed | Cannot be delayed |
+| Up/Down Size | Only to Silver | Only to Gold | Gold or Silver |
+
+| Reliability Tier | Platinum | Gold | Silver | Bronze | None |
+| --- | --- | --- | --- | --- | --- |
+| Min Number of VMs | 9 | 7 | 5 | 3 | 1 |
