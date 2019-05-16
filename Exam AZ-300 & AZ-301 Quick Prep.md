@@ -140,7 +140,7 @@
 ## Code-First (Imperative) Integration
 
 | Choices | WebJobs | Functions |
-| --- | --- | --- | --- |
+| --- | --- | --- | 
 | Trigger Types| Triggered | Multiple |
 | Long-Running Type| Continuous (Looping) | No - 5-min timeout |
 | Remote Debugging | Only for Continuous | Yes |
