@@ -146,7 +146,7 @@
 | Horizontal | Cluster Autoscaler | Horizontal Pod Autoscaler (HPA)
 | Vertical | Cluster Autoscaler | n/a |
 
-##* Service Fabric
+## Service Fabric
 
 | ASF Durability Tier | Gold | Silver | Bronze |
 | --- | --- | --- | --- |
