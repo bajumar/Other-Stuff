@@ -16,9 +16,8 @@
 | Compute | F | High CPU:RAM (Web, Batch, Apps) |
 | Memory | Dv2, E, M, G, GS | High RAM:CPU (DB, Cache, Analytics) |
 | Storage | Ls | High IOPS (NoSQL, Transactional, Big Data) |
-| GPU | NC, ND, NV | NVIDA (Graphics, Rendering. CAD/CAM, Video) |
+| GPU | NC, ND, NV | NVIDA (Rendering. CAD/CAM, ML Models & Training) |
 | HPC | H | Most powerful CPU, RDMA-enabled |
-
 
 | SLA % | Qualifier |
 | --- | --- |
@@ -82,10 +81,10 @@
 
 *\*Note: Cannot be resized once set*
 
-| Data Security | Tramsparent Data Encryption (TDE) | Dynamic Data Masking (DDM) | Row-Level Security |
+| Security | Transparent Data Encryption (TDE) | Dynamic Data Masking (DDM) | Row-Level Security |
 | --- | --- | --- | --- |
-| When | Always | Mask field DATA in COLUMNS | Filter out ROWS from VIEWS |
-| How | Portal - Enabled by default | Portal - Edit masking rule | "SCHEMABINDING=ON" query syntax |
+| When | Always | Mask DATA in COLUMNS | Filter ROWS from VIEWS |
+| How | Portal - Enabled by default | Portal - Edit masking rule | "SCHEMABINDING=ON" |
 
 ## Network
 
@@ -151,14 +150,15 @@
 
 | Choices | WebJobs | Functions |
 | --- | --- | --- |
-| Trigger Types| Triggered | Multiple |
+| Pricing | App Service Plan | ASP or Consumption |
+| Unique Triggers | File System | WebHook, Event Grid |
 | Long-Running Type| Continuous (Looping) | No - 5-min timeout |
 | Remote Debugging | Only for Continuous | Yes |
-| Pricing | App Service Plan | ASP or Consumption |
-| ASP-App Integrated | Yes | No |
-| JobHost Control | Yes | No |
+| Integration with ASP-App | Yes | No |
+| JobHost Retry Control | Yes | No |
+| Integration with Logic Apps | No | Yes |
 | Auto-Scale | No | Yes |
-| Stateful Type | No | Durable |
+| Stateful Support | No | Yes - Durable |
 
 ## Design-First (Declarative) Integration
 | Choices | Logic Apps | Flow|
@@ -179,3 +179,20 @@
 | Reliability Tier | Platinum | Gold | Silver | Bronze | None |
 | --- | --- | --- | --- | --- | --- |
 | Min Number of VMs | 9 | 7 | 5 | 3 | 1 |
+
+## App Service Plans
+
+| Plan Features | F1 | D1 | B1-B3 | S1-S3 | P1-P3(v2) | ASE I1-I3 |
+| --- | --- | --- | --- | --- | --- | --- |
+| ACU | Shared | Shared | 100-400 | 100-400 | 210-840 | 210-840 |
+| RAM GB | 1 | 1 | 1.75-7 | 1.75-7 | 3.5-14 | 3.5-14 |
+| Disk GB | 1 | 1 | 10 | 50 | 250 | 1k (1TB) | 1k (1TB) |
+| Custom Domain | No | Yes | Yes | Yes | Yes | Yes |
+| SSL | No | No | Yes | Yes | Yes | Yes |
+| Scale | No | No | Manual 3 | Auto 10 | Auto 20 | Auto |
+| Staging Slots | No | No | No | 5 | 20 | 20 |
+| Daily Backup | No | No | No | 10 | 50 | 50 |
+| Traffic Manager | No | No | No | Yes | Yes | Yes |
+| VPN Hybrid VNET | No | No | No | Yes | Yes | Yes |
+| Isolated VNET | No | No | No | No | No | Yes |
+
