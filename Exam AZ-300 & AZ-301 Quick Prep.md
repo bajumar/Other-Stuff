@@ -122,16 +122,43 @@
 
 ## Containers
 
+| General Use-Case | Recommend... |
+| --- | --- |
+| Monolithic App | App Service |
+| N-Tier App | AKS or ASF |
+| Linux Microservice | AKS |
+| Windows Microservice | ASF |
+| Serverless | Functions |
+| Large-Scale Batch | Batch |
+
+*\*Note: Details - <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-comparison>*
+
 | Registry SKUs | Basic | Standard | Premium |
 | --- | --- | --- | --- |
 | Storage GB | 10 | 100 | 500 |
 | Webhooks | 2 | 10 | 100 |
 | Geo-Replication | No | No | Yes |
 
+### AKS
+
 | AKS Scaling | Cluster Node | Container Pod |
 | --- | --- | --- |
 | Horizontal | Cluster Autoscaler | Horizontal Pod Autoscaler (HPA)
 | Vertical | Cluster Autoscaler | n/a |
+
+##* Service Fabric
+
+| ASF Durability Tier | Gold | Silver | Bronze |
+| --- | --- | --- | --- |
+| Min Number of VMs | 5 | 5| 1 |
+| VM SKUs | Full-Nodes (Largest) | 1+ Cores | All |
+| Your Updates | Can be delayed | Can be delayed | Will not be delayed |
+| Azure Updates | Can be paused 2 hours | Cannot be delayed | Cannot be delayed |
+| Up/Down Size | Only to Silver | Only to Gold | Gold or Silver |
+
+| ASF Reliability Tier | Platinum | Gold | Silver | Bronze | None |
+| --- | --- | --- | --- | --- | --- |
+| Min Number of VMs | 9 | 7 | 5 | 3 | 1 |
 
 ## Events & Messages
 
@@ -179,20 +206,6 @@
 | --- | --- | --- |
 | Users | Devs | Business |
 | Granularity | Code | Configuration |
-
-## Service Fabric
-
-| Durability Tier | Gold | Silver | Bronze |
-| --- | --- | --- | --- |
-| Min Number of VMs | 5 | 5| 1 |
-| VM SKUs | Full-Nodes (Largest) | 1+ Cores | All |
-| Your Updates | Can be delayed | Can be delayed | Will not be delayed |
-| Azure Updates | Can be paused 2 hours | Cannot be delayed | Cannot be delayed |
-| Up/Down Size | Only to Silver | Only to Gold | Gold or Silver |
-
-| Reliability Tier | Platinum | Gold | Silver | Bronze | None |
-| --- | --- | --- | --- | --- | --- |
-| Min Number of VMs | 9 | 7 | 5 | 3 | 1 |
 
 ## App Service Plans
 
