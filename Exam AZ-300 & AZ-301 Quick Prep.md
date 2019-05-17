@@ -2,6 +2,20 @@
 
 ## Azure Active Directory
 
+| AAD SKUs | Basic | P1 | P2 |
+| --- | --- | --- | --- |
+| SSO | 10 apps/user | Unlimited | Unlimited |
+| Reports | Basic | Advanced | Advanced |
+| Self-Service Reset | No | Yes | Yes |
+| Device Writeback | No | Yes | Yes |
+| MFA | No | Yes | Yes |
+| Connect Health | No | Yes | Yes |
+| Conditional Access+ | No | Yes | Yes |
+| 3rd Party Support | No | Yes | Yes |
+| IDP | No | No | Yes |
+| PIM | No | No | Yes |
+| Access Reviews | No | No | Yes |
+
 | Hybrid Identity Model | Password Hash Sync (PHS) | Pass-Through Auth (PTA) | Federation/ADFS |
 | --- | --- | --- | --- |
 | PW Store & Auth Flow | Azure AD | On-Prem AD | External/Other Provider |
@@ -195,4 +209,3 @@
 | Traffic Manager | No | No | No | Yes | Yes | Yes |
 | VPN Hybrid VNET | No | No | No | Yes | Yes | Yes |
 | Isolated VNET | No | No | No | No | No | Yes |
-
